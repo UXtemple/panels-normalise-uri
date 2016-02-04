@@ -1,0 +1,47 @@
+{
+  "name": "panels-normalise-uri",
+  "description": "normalise panels URIs",
+  "jsnext:main": "dist/next.js",
+  "main": "dist/cjs.js",
+  "scripts": {
+    "bundle": "rollup -c .rollup/cjs.js && rollup -c .rollup/next.js",
+    "postpublish": "rm -rf dist && git checkout package.json && git push && git push --tags",
+    "prepublish": "npm run bundle",
+    "push": "git tag $(npm version $VERSION) && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UXtemple/panels-normalise-uri.git"
+  },
+  "keywords": [
+    "panels",
+    "normalise",
+    "uri",
+    "uxtemple",
+    "usepanels"
+  ],
+  "author": "UXtemple <hi@uxtemple.com>",
+  "contributors": [
+    "Darío Javier Cravero <dario@uxtemple.com>",
+    "Tom Parandyk <tom@uxtemple.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UXtemple/panels-normalise-uri/issues"
+  },
+  "homepage": "https://github.com/UXtemple/panels-normalise-uri#readme",
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-cli": "^6.3.17",
+    "babel-plugin-external-helpers": "^6.4.0",
+    "babel-plugin-transform-export-extensions": "^6.3.13",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babel-preset-react": "^6.3.13",
+    "rollup": "0.25.1",
+    "rollup-plugin-babel": "^2.3.9"
+  },
+  "dependencies": {
+  }
+}
